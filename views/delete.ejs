@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REST Chat App-MongoDB</title>
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header" style="background-color: #EE4B2B;">Do You Want to Delete this Message?</div>
+        <form method="post" action="/<%= usermsg._id %>?_method=DELETE">
+            <div class="chat-box">
+                <div class="message data">
+                    <p><strong>From:</strong> <%= usermsg.from %> </p>
+                    <p> <%= usermsg.msg %> </p>
+                    <p class="message-info"><strong>To:</strong> <b><%= usermsg.to %></b> | <%= usermsg.created_at.toString().split(" ")[4] %> | <%= usermsg.created_at.toString().split(" ").slice(0,4).join(" ") %></p>
+                </div>
+            </div>
+            <div class="chat-input">
+            <button style="background-color: #EE4B2B;">Delete Message</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

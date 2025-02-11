@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REST Chat App-MongoDB</title>
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">Edit Chat</div>
+        <form method="post" action="/<%= usermsg._id %>?_method=PATCH">
+            <div class="chat-box">
+                <div class="message data">
+                    <p><strong>From:</strong> <%= usermsg.from %></p>
+                    <p><label for="msg">Message:</label><br><textarea name="msg" id="msg"><%= usermsg.msg %></textarea></p>
+                    <p><strong>From:</strong> <%= usermsg.to %></p>
+                </div>
+            </div>
+            <div class="chat-input">
+            <button>Save Changes</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
